@@ -1,0 +1,3 @@
+1. Create a class with the name PsrticleUtil.java.
+2. Then copy the code in the class and replace all the imports.
+3. Go into your class you want to get the particles into and write in there private ParticleUtil particles; and then call it with: this.particles = new ParticleUtil(this.width, this.height);

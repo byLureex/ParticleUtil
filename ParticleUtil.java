@@ -7,12 +7,12 @@ import java.util.Random;
 
 import net.minecraft.client.gui.Gui;
 
-public class ParticleUtil {
+public class ParticleUtilRendering {
 	
 	private final List<Particle> particles;
 	private int width, height, count;
 	
-	public ParticleUtil(final int width, final int height) {
+	public ParticleUtilRendering(final int width, final int height) {
 		this.width = width;
 		this.height = height;
 		this.count = 80;
@@ -21,35 +21,47 @@ public class ParticleUtil {
 			this.particles.add(new Particle(new Random().nextInt(width), new Random().nextInt(height)));
 		}
 		
-	}
-	
-	public void drawParticles() {
+		public void renderallParticles() {
 		this.particles.forEach(particle -> particle.drawParticle());
+		
 	}
 	
-	public class Particle {
+	
+	}
+	
+	public class ParticleSizecustom {
 		
 		private int xPos, yPos;
 		
 		public Particle(final int xPos, final int yPos) {
 			this.xPos = xPos;
 			this.yPos = yPos;
+			
+		}
+			
+			
+			if(this.yPos > ParticleUtil.this.height) {
+				this.yPos = -particleSize;
+			}
 		}
 		
-		public void drawParticle() {
+		
+		
+		
+		public void drawParticlesAll() {
 			++this.xPos;
 			++this.yPos;
-			final int particleSize = 3;
+			final int particleGröße = 3;
 			
 			if (this.xPos > ParticleUtil.this.width) {
-				this.xPos = -particleSize;
+				this.xPos = -particleGröße;
 			}
 			
 			
 			
 			
 			if(this.yPos > ParticleUtil.this.height) {
-				this.yPos = -particleSize;
+				this.yPos = -particleGröße;
 			}
 			
 			
